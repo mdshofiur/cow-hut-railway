@@ -2,19 +2,15 @@ import mongoose from "mongoose";
 import app from "./app";
 
 const port: number = 2000;
+const uri: string = process.env.DB_URL || "mongodb://localhost:27017/firstdb";
 
-async function main() {
-  const uri: any = process.env.DB_URL || "mongodb://localhost:27017/firstdb";
+app.listen(port, async () => {
   try {
-    (await mongoose.connect(uri)) as any;
+    await mongoose.connect(uri);
     console.log("Database is connected");
-    // app listen
-    app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`);
-    });
+    console.log(`Example app listening on port ${port}`);
   } catch (error) {
     console.log("Database connect error", error);
   }
-}
+});
 
-main();
