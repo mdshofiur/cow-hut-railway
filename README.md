@@ -1,7 +1,7 @@
 # cow-hut
 
 
-## Live Link: [(https://cow-hut-railway-production.up.railway.app/)](https://cow-hut-railway-production.up.railway.app/)
+## Live Link: https://cow-hut-railway.vercel.app
 
 # Application Routes:
 
