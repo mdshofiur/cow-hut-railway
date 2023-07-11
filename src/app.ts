@@ -2,6 +2,7 @@ import express, { Express, NextFunction, Request, Response } from "express";
 import { errorHandlerMiddleware } from "./middleware/error-handler";
 import userRouter from "./modules/user/user.route";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import cowRouters from "./modules/cow/cow.route";
 import "dotenv/config";
 import ordersRouters from "./modules/orders/order.route";
@@ -11,6 +12,7 @@ require("dotenv").config();
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(express.json());
 app.use(errorHandlerMiddleware);
 
