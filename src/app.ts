@@ -21,7 +21,7 @@ app.use(cowRouters);
 app.use(ordersRouters);
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
-  res.send("Hello World!");
+  res.send("Hello Cows Backend");
 });
 
 export default app;
