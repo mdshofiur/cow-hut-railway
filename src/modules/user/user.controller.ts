@@ -56,7 +56,7 @@ export const getAllUsers = async (req: Request, res: Response) => {
       message: "Users fetched successfully",
       data: users,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,
