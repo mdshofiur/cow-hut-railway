@@ -3,7 +3,7 @@ import { UserModel } from "./user.model";
 /* -------------------------------------------------------------------------- */
 /*                            Create a user service                           */
 /* -------------------------------------------------------------------------- */
-export const createUsersService = async (newUser) => {
+export const createUsersService = async (newUser:any) => {
   const user = await UserModel.create(newUser);
   return user;
 };

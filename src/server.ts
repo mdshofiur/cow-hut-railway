@@ -20,6 +20,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(errorHandlerMiddleware);
 
+app.use(express.static('public'))
+
 app.use(userRouter);
 app.use(cowRouters);
 app.use(ordersRouters);

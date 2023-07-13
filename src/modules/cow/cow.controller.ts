@@ -20,7 +20,7 @@ export const createCow = async (req: Request, res: Response) => {
       message: "Cow created successfully",
       data: cow,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,
@@ -75,7 +75,7 @@ export const getAllCows = async (req: Request, res: Response) => {
       },
       data: cows,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,
@@ -99,7 +99,7 @@ export const getSingleCow = async (req: Request, res: Response) => {
       message: "Cow retrieved successfully",
       data: cow,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,
@@ -123,7 +123,7 @@ export const updateCow = async (req: Request, res: Response) => {
       message: "Cow updated successfully",
       data: updatedCow,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,
@@ -147,7 +147,7 @@ export const deleteCow = async (req: Request, res: Response) => {
       message: "Cow deleted successfully",
       data: deletedCow,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,

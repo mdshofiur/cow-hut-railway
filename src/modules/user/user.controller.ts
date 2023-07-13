@@ -33,7 +33,7 @@ export const createUsers = async (req: Request, res: Response) => {
       message: "User created successfully",
       data: user,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,
@@ -80,7 +80,7 @@ export const getSingleUser = async (req: Request, res: Response) => {
       message: "User fetched successfully",
       data: user,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,
@@ -104,7 +104,7 @@ export const updateUser = async (req: Request, res: Response) => {
       message: "User updated successfully",
       data: userUpdate,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,
@@ -128,7 +128,7 @@ export const deleteUser = async (req: Request, res: Response) => {
       message: "User deleted successfully",
       data: userDelete,
     });
-  } catch (error) {
+  } catch (error:any) {
     res.status(500).json({
       success: false,
       statusCode: 500,
