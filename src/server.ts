@@ -9,7 +9,7 @@ import "dotenv/config";
 import ordersRouters from "./modules/orders/order.route";
 
 const port: number = 1000;
-const uri: any = process.env.DB_URL || "mongodb://localhost:27017/firstdb";
+const uri: any = process.env.DB_URL
 
 const app: Express = express();
 require("dotenv").config();
