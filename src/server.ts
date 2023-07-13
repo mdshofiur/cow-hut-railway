@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
 import express, { Express, NextFunction, Request, Response } from "express";
+import mongoose from 'mongoose';
 import { errorHandlerMiddleware } from "./middleware/error-handler";
 import userRouter from "./modules/user/user.route";
 import cors from "cors";
