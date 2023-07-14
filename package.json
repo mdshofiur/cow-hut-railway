@@ -5,6 +5,7 @@
   "main": "src/server.ts",
   "author": "Md Shafikur Rahaman",
   "license": "ISC",
+  "type": "commonjs",
   "engines": {
     "node": "18.x"
   },
