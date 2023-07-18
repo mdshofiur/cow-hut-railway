@@ -3,14 +3,14 @@
   "name": "cow-backend",
   "builds": [
     {
-      "src": "src/server.ts",
+      "src": "src/server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/server.ts"
+      "dest": "src/server.js"
     }
   ]
 }
