@@ -1,16 +1,16 @@
 {
+
   "version": 2,
-  "name": "cow-backend",
   "builds": [
-    {
-      "src": "src/server.js",
-      "use": "@vercel/node"
-    }
+   {
+     "src": "dist/server.js",
+     "use": "@vercel/node"
+   }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/server.js"
+      "dest": "dist/server.js"
     }
   ]
 }

@@ -10,12 +10,5 @@
     "noImplicitAny": false,
     "strict": false,
     "skipLibCheck": true,
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"],
-    "ts-node": {
-      "compilerOptions": {
-        "module": "commonjs"
-      }
-    }
+  }
 }
