@@ -3,39 +3,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
-const error_handler_1 = require("./middleware/error-handler");
-const user_route_1 = __importDefault(require("./modules/user/user.route"));
-const cors_1 = __importDefault(require("cors"));
-const cookie_parser_1 = __importDefault(require("cookie-parser"));
-const cow_route_1 = __importDefault(require("./modules/cow/cow.route"));
-require("dotenv/config");
-const order_route_1 = __importDefault(require("./modules/orders/order.route"));
-const port = 1000;
-const uri = process.env.DB_URL;
-const app = (0, express_1.default)();
-require("dotenv").config();
-app.use((0, cors_1.default)());
-app.use(express_1.default.urlencoded({ extended: true }));
-app.use((0, cookie_parser_1.default)());
-app.use(express_1.default.json());
-app.use(error_handler_1.errorHandlerMiddleware);
-app.use(express_1.default.static('public'));
-app.use(user_route_1.default);
-app.use(cow_route_1.default);
-app.use(order_route_1.default);
-app.get("/", (req, res, next) => {
-    res.send("Hello Cows Backend");
-});
-app.listen(port, async () => {
+const app_1 = __importDefault(require("./app"));
+let server;
+async function run() {
     try {
-        await mongoose_1.default.connect(uri);
-        console.log("Database is connected");
-        console.log(`Example app listening on port ${port}`);
+        await mongoose_1.default.connect("mongodb+srv://testingDatabase:LmlkuPM6zWk6hdW5@cluster0.e7yhr.mongodb.net/cow-hurt?retryWrites=true&w=majority");
+        console.log(`Database is connected successfully`);
+        server = app_1.default.listen(2000, () => {
+            console.log(`Application  listening on port 2000`);
+        });
     }
-    catch (error) {
-        console.log("Database connect error", error);
+    catch (err) {
+        console.log('Failed to connect database', err);
     }
-});
+    process.on('unhandledRejection', error => {
+        if (server) {
+            server.close(() => {
+                process.exit(1);
+            });
+        }
+        else {
+            process.exit(1);
+        }
+    });
+}
+run();
 //# sourceMappingURL=server.js.map
