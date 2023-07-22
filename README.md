@@ -26,7 +26,7 @@
 * https://cow-hut-railway-deploy.vercel.app/api/v1/cows?sortBy=price&sortOrder=asc
 * https://cow-hut-railway-deploy.vercel.app/api/v1/cows?minPrice=20000&maxPrice=70000
 * https://cow-hut-railway-deploy.vercel.app/api/v1/cows?location=Chattogram
-* https://cow-hut-railway-deploy.vercel.app/api/v1/cows?searchTerm=Cha
+* https://cow-hut-railway-deploy.vercel.app/api/v1/cows?searchTerm=Dhaka
 
 ##  /api/v1/orders (POST) Body
 
