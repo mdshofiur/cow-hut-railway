@@ -1,0 +1,14 @@
+# Ignore Node.js npm cache
+node_modules
+.vercel
+
+# Ignore build artifacts
+build
+
+# Ignore temporary files
+*.tmp
+*.log
+
+# Ignore secret configuration files
+secrets
+.env
