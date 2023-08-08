@@ -1,0 +1,14 @@
+version: '1'
+services:
+  app:
+    image: nodejs-app:v1.0
+    container_name: nodejs-container
+    ports:
+      - "2000:2000"
+    volumes:
+      - nodejs-vol:/app
+    environment:
+      - NODE_ENV=production
+
+volumes:
+  nodejs-vol:
